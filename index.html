@@ -33,7 +33,10 @@
 
       // Set the m3u8 link as the source of the video element
       const video = document.getElementById('video');
-      video.src = m3u8Link;
+      const source = document.createElement('source');
+      source.setAttribute('src', m3u8Link);
+      video.appendChild(source);
+      video.load();
     });
   </script>
 </body>
